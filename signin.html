@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Layout By Evolabs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.10/angular-material.css">
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.10/docs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.10/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css\app.css" />
+    <script src="js\app.js"></script>
+</head>
+
+<body ng-app="MyApp" layout="column" ng-controller="SignInCtrl" ng-cloak layout="row">
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <span flex></span>
+            <h1 class="md-title text-center">{{companyName}}</h2>
+                <span flex></span>
+        </div>
+    </md-toolbar>
+
+    <form name="loginForm">
+        <div class="md-padding">
+            <md-content  layout-xs="column" layout="row" layout-align="center center">
+                <div flex-xs flex-gt-xs="30" layout="column">
+                    <md-card >
+                            <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">Sign In</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                        <md-card-content>
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                    <label>Email</label>
+                                    <md-icon md-svg-src="img\icons\email_logo.svg" class="name"></md-icon>
+                                    <input ng-model="user.name" type="email" name="username" ng-pattern="/^.+@.+\..+$/"
+                                        ng-required="true">
+                                    <div ng-messages="loginForm.username.$error">
+                                        <div ng-message="required">Email is required.</div>
+                                        <div ng-message="pattern">Please enter valid email.</div>
+                                    </div>
+                                </md-input-container>
+                            </section>
+    
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                    <label>Password</label>
+                                    <md-icon md-svg-src="img\icons\passwordLogo.svg" class="name"></md-icon>
+                                    <input type="password" ng-model="user.password" name="password" ng-required="true">
+                                    <div ng-messages="loginForm.password.$error" role="alert">
+                                        <div ng-message="required">Password is required.</div>
+                                    </div>
+                                </md-input-container>
+                            </section>
+    
+    
+                            <section layout="column" layout-align="center center">
+                                <div layout="row" style="width: 90%">
+                                    <md-button class="md-raised md-primary" flex>Sign In</md-button>
+                                </div>
+                            </section>
+                            <br><br>
+                            <section layout="row" layout-align="center center">
+                                <div layout="row" flex-xs="95" flex-gt-xs="90">
+                                    <span>
+                                        <a href="" ng-click="showPrompt($event)">Forget Password?</a>
+                                    </span>
+                                    <span flex></span>
+                                    <span>
+                                        <a href="">Create New Account</a>
+                                    </span>
+                                </div>
+                            </section>
+                            <br>
+                        </md-card-content>
+                    </md-card>
+                </div>
+            </md-content>
+        </div>
+    </form>
+</body>
+
+</html>

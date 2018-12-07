@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Angular Layout By Evolabs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.10/angular-material.css">
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.10/docs.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+    <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.10/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css\app.css" />
+    <script src="js\app.js"></script>
+</head>
+
+<body ng-app="MyApp" layout="column" ng-controller="SignUpCtrl" ng-cloak>
+    <md-toolbar class="md-hue-2">
+        <div class="md-toolbar-tools">
+            <span flex></span>
+            <h1 class="md-title text-center">{{companyName}}</h2>
+                <span flex></span>
+        </div>
+    </md-toolbar>
+
+    <form name="loginForm">
+        <div ng-cloak>
+            <md-content class="md-padding" layout-xs="column" layout="row">
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Personal Details</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                        <label>First Name</label>
+                                        <md-icon md-svg-src="img\icons\person_logo.svg" class="name"></md-icon>
+                                        <input ng-model="user.firstname" type="text" name="firstname" ng-minlength="3"
+                                            ng-pattern="/^[a-zA-Z]*$/" ng-required="true">
+                                        <div ng-messages="loginForm.firstname.$error">
+                                            <div ng-message="minlength">Too Short</div>
+                                            <div ng-message="required">First name is required.</div>
+                                            <div ng-message="pattern">Please enter valid first name.</div>
+                                        </div>
+                                    </md-input-container>
+                                </section>
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                        <label>Middle Name</label>
+                                        <md-icon md-svg-src="img\icons\person_logo.svg" class="name"></md-icon>
+                                        <input ng-model="user.middlename" type="text" name="middlename" ng-minlength="3"
+                                            ng-pattern="/^[a-zA-Z]*$/">
+                                        <div ng-messages="loginForm.middlename.$error">
+                                            <div ng-message="minlength">Too Short</div>
+                                            <div ng-message="pattern">Please enter valid middle name.</div>
+                                        </div>
+                                    </md-input-container>
+                                </section>
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                        <label>Last Name</label>
+                                        <md-icon md-svg-src="img\icons\person_logo.svg" class="name"></md-icon>
+                                        <input ng-model="user.lastname" type="text" name="lastname" ng-minlength="3"
+                                            ng-pattern="/^[a-zA-Z]*$/" ng-required="true">
+                                        <div ng-messages="loginForm.lastname.$error">
+                                            <div ng-message="minlength">Too Short</div>
+                                            <div ng-message="required">Last name is required.</div>
+                                            <div ng-message="pattern">Please enter valid last name.</div>
+                                        </div>
+                                    </md-input-container>
+                                </section>
+                                <br>
+                        </md-card-content>
+                    </md-card>
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Personal Details</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 100%">
+                                    <label>Date of Birth</label>
+                                    <md-datepicker ng-model="loginform.dob" name="dob" md-placeholder="Enter date"
+                                        ng-required="true"></md-datepicker>
+                                    <div ng-messages="loginForm.dob.$error">
+                                        <div ng-message="required">DOB is required.</div>
+                                    </div>
+
+                                </md-input-container>
+                            </section>
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                    <p>Gender</p>
+                                    <md-radio-group ng-model="data.group1" layout="row">
+                                        <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+                                        <md-radio-button value="Female">Female</md-radio-button>
+                                    </md-radio-group>
+                                </md-input-container>
+                            </section>
+                            <br>
+                        </md-card-content>
+                    </md-card>
+                </div>
+                <div flex-xs flex-gt-xs="50" layout="column">
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Contact Details</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                    <label>Phone Number</label>
+                                    <md-icon md-svg-src="img\icons\phone_logo.svg" class="name"></md-icon>
+                                    <input ng-model="user.phonenumber" type="text" name="phonenumber"
+                                        ng-pattern="/^\+?\d{10}$/" ng-required="true">
+                                    <div ng-messages="loginForm.phonenumber.$error">
+                                        <div ng-message="required">Phone number is required.</div>
+                                        <div ng-message="pattern">Please enter valid phone Number.</div>
+                                    </div>
+                                </md-input-container>
+                            </section>
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                    <label>Email</label>
+                                    <md-icon md-svg-src="img\icons\email_logo.svg" class="name"></md-icon>
+                                    <input ng-model="user.email" type="email" name="email" ng-pattern="/^.+@.+\..+$/"
+                                        ng-required="true">
+                                    <div ng-messages="loginForm.email.$error">
+                                        <div ng-message="required">Email is required.</div>
+                                        <div ng-message="pattern">Please enter valid email.</div>
+                                    </div>
+                                </md-input-container>
+                            </section>
+                            <section layout="column" layout-align="center center">
+                                <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                    <label>Address</label>
+                                    <md-icon md-svg-src="img\icons\location_logo.svg" class="name"></md-icon>
+                                    <textarea ng-model="user.address" name="address" max-rows="2" ng-required="true"></textarea>
+                                    <div ng-messages="loginForm.address.$error">
+                                        <div ng-message="required">Address is required.</div>
+                                    </div>
+                                </md-input-container>
+                            </section>
+                            <br>
+                    </md-card-content>
+                    </md-card>
+                    <md-card>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Login Details</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                           
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                        <label>Username</label>
+                                        <md-icon md-svg-src="img\icons\person_logo.svg" class="name"></md-icon>
+                                        <input ng-model="user.username" type="text" name="username" ng-minlength="3"
+                                            ng-pattern="/^[a-zA-Z]*$/" ng-required="true">
+                                        <div ng-messages="loginForm.username.$error">
+                                            <div ng-message="minlength">Too Short</div>
+                                            <div ng-message="required">Username is required.</div>
+                                            <div ng-message="pattern">Please enter valid Username.</div>
+                                        </div>
+                                    </md-input-container>
+                                </section>
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                        <label>Password</label>
+                                        <md-icon md-svg-src="img\icons\person_logo.svg" class="name"></md-icon>
+                                        <input ng-model="user.password" type="password" name="password" ng-minlength="3"
+                                            ng-pattern="/^[a-zA-Z]*$/" ng-required="true">
+                                        <div ng-messages="loginForm.password.$error">
+                                            <div ng-message="minlength">Too Short</div>
+                                            <div ng-message="required">Password id required.</div>
+                                            <div ng-message="pattern">Please enter valid Password.</div>
+                                        </div>
+                                    </md-input-container>
+                                </section>
+                            
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button class="md-raised md-primary">Submit</md-button>
+                            <md-button class="md-raised md-warn">Reset</md-button>
+                          </md-card-actions>
+                    </md-card>
+
+                </div>
+            </md-content>
+        </div>
+    </form>
+</body>
+
+</html>

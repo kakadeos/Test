@@ -80,37 +80,27 @@
                                         </div>
                                     </md-input-container>
                                 </section>
-                                <br>
-                        </md-card-content>
-                    </md-card>
-                    <md-card>
-                        <md-card-title>
-                            <md-card-title-text>
-                                <span class="md-headline">Personal Details</span>
-                            </md-card-title-text>
-                        </md-card-title>
-                        <md-card-content>
-                            <section layout="column" layout-align="center center">
-                                <md-input-container class="md-icon-float md-block" style="width: 100%">
-                                    <label>Date of Birth</label>
-                                    <md-datepicker ng-model="loginform.dob" name="dob" md-placeholder="Enter date"
-                                        ng-required="true"></md-datepicker>
-                                    <div ng-messages="loginForm.dob.$error">
-                                        <div ng-message="required">DOB is required.</div>
-                                    </div>
-
-                                </md-input-container>
-                            </section>
-                            <section layout="column" layout-align="center center">
-                                <md-input-container class="md-icon-float md-block" style="width: 90%">
-                                    <p>Gender</p>
-                                    <md-radio-group ng-model="data.group1" layout="row">
-                                        <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
-                                        <md-radio-button value="Female">Female</md-radio-button>
-                                    </md-radio-group>
-                                </md-input-container>
-                            </section>
-                            <br>
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 94%">
+                                        <label>Date of Birth</label>
+                                        <md-datepicker ng-model="loginform.dob" name="dob" md-placeholder="Enter date"
+                                            ng-required="true"></md-datepicker>
+                                        <div ng-messages="loginForm.dob.$error">
+                                            <div ng-message="required">DOB is required.</div>
+                                        </div>
+    
+                                    </md-input-container>
+                                </section>
+                                <section layout="column" layout-align="center center">
+                                    <md-input-container class="md-icon-float md-block" style="width: 90%">
+                                        <p>Gender</p>
+                                        <md-radio-group ng-model="data.group1" layout="row">
+                                            <md-radio-button value="Male" class="md-primary">Male</md-radio-button>
+                                            <md-radio-button value="Female">Female</md-radio-button>
+                                        </md-radio-group>
+                                    </md-input-container>
+                                </section>
+                                <br><br><br><br><br>
                         </md-card-content>
                     </md-card>
                 </div>
@@ -196,13 +186,17 @@
                             
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center">
-                            <md-button class="md-raised md-primary">Submit</md-button>
-                            <md-button class="md-raised md-warn">Reset</md-button>
+                            
                           </md-card-actions>
                     </md-card>
 
                 </div>
             </md-content>
+            <div layout="row" layout-align="center center">
+                <md-button class="md-raised md-primary">Submit</md-button>
+            <md-button class="md-raised md-warn">Reset</md-button>
+            </div>
+            
         </div>
     </form>
 </body>
